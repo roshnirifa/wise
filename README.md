@@ -8,6 +8,10 @@
 * TailwindCss
 * Daisy Ui (Component library)
 * Firebase (For Authentication)
+* React Firebase Hook
 * React Router
+* React loading
+* React Toastify
+
 
 
