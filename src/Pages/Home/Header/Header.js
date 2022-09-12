@@ -47,7 +47,9 @@ const Header = () => {
                                     <span class="badge">New</span>
                                 </a>
                             </li>
-                            <li><a>Settings</a></li>
+                            <li><a>Profile</a></li>
+                            <li><a>My Order</a></li>
+                            <li><a>wishlist</a></li>
                             <li><a>Logout</a></li>
                         </ul>
                     </div>
