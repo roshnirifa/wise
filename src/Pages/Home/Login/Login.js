@@ -81,7 +81,7 @@ const Login = () => {
 
                     <p className='text-danger'>{error?.message}</p>
                     {
-                        loading && <p>Loading...</p>
+                        loading && <Loading></Loading>
                     }
 
                     <div className='text-center mt-5'>
