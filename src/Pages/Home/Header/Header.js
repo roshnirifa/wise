@@ -80,7 +80,7 @@ const Header = () => {
 
 
                                 :
-                                <button className='btn btn-primary w-full max-w-xs'>  <Link to='/login'>Login</Link></button>
+                                <button className='btn  w-full max-w-xs'>  <Link to='/login'>Login</Link></button>
                         }
 
 

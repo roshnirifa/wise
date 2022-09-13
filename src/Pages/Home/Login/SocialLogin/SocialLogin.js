@@ -34,7 +34,7 @@ const SocialLogin = () => {
                     <div className='orDiv'></div>
                 </div>
             </div>
-            <button className='btn btn-primary w-full max-w-xs' onClick={() => signInWithGoogle()} ><BsGoogle className='icon'></BsGoogle>Signin</button>
+            <button className='btn  w-full max-w-xs text-xs mt-5' onClick={() => signInWithGoogle()} ><BsGoogle className='icon'></BsGoogle>Signin with google</button>
             {/* <div className='d-flex btn-group'>
                 <button className='btn btn-danger mb-3 ' onClick={() => signInWithGoogle()} ><BsGoogle className='icon'></BsGoogle> Signin With Google</button>
 

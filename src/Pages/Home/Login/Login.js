@@ -68,7 +68,7 @@ const Login = () => {
         <div className='login p-5'>
             <div className='mx-auto login-container '>
                 <div>
-                    <h2 className=' text-3xl text-center mt-5 text-primary font-bold'>Please login!!!!!</h2>
+                    <h2 className=' text-3xl text-center pt-8 mt-5 text-primary font-bold '>Please login!!!!!</h2>
                 </div>
                 <form onSubmit={handleSubmit} className='m-5'>
 
@@ -85,13 +85,13 @@ const Login = () => {
                     }
 
                     <div className='text-center mt-5'>
-                        <button className='btn btn-primary w-full max-w-xs'>Login</button>
+                        <button className='btn  w-full max-w-xs text-xs'>Login</button>
                     </div>
-                    <div className=''>
-                        <p className='mt-4  font-bold'>New to Wise E-Commerce? <span className='text-primary ' onClick={navigateSignUp} style={{ cursor: 'pointer' }}>Please Register</span></p>
+                    <div className='text-center'>
+                        <p className='mt-4  font-bold text-sm'>New to Wise E-Commerce? <span className='text-primary text-sm' onClick={navigateSignUp} style={{ cursor: 'pointer' }}>Please Register</span></p>
 
 
-                        <p className='mt-4 font-bold mb-5'>Forget Password? <span className='text-primary' onClick={resetPassword} style={{ cursor: 'pointer' }}>Reset Password</span></p>
+                        <p className='mt-4 font-bold mb-5 text-sm'>Forget Password? <span className='text-primary text-sm' onClick={resetPassword} style={{ cursor: 'pointer' }}>Reset Password</span></p>
                     </div>
 
                     <SocialLogin></SocialLogin>

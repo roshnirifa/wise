@@ -68,7 +68,7 @@ const Register = () => {
     return (
         <div className='login p-5'>
             <div className='mx-auto login-container my-4'>
-                <h2 className='text-3xl text-center mt-5 font-bold text-primary'>Please SignUp!!!!!</h2>
+                <h2 className='text-3xl text-center pt-8 mt-5 font-bold text-primary'>Please SignUp!!!!!</h2>
 
                 <form onSubmit={handleSubmit} className=' m-5'>
                     <div className='text-center'>
@@ -88,11 +88,11 @@ const Register = () => {
 
                     <p className='text-danger'>{error}</p>
                     <div className='text-center'>
-                        <button className='btn btn-primary w-full max-w-xs mt-5'>Register</button>
+                        <button className='btn  w-full max-w-xs mt-5 text-xs'>Register</button>
                     </div>
 
 
-                    <p className='mt-4 text-danger font-bold ' >Already have an account? <span className='text-primary' onClick={navigateSignUp} style={{ cursor: 'pointer' }}>Please Login</span></p>
+                    <p className='mt-4 text-danger font-bold text-center text-sm ' >Already have an account? <span className='text-primary' onClick={navigateSignUp} style={{ cursor: 'pointer' }}>Please Login</span></p>
 
                     <SocialLogin></SocialLogin>
 
