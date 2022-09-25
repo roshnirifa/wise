@@ -12,6 +12,7 @@
 * React Router
 * React loading
 * React Toastify
+* swiperjs (for animation and slide)
 
 
 
