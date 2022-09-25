@@ -94,7 +94,7 @@ const Banner = () => {
                         <div className='flex items-center'>
                             <div className=' px-12'>
                                 <h1 className='font-bold text-xl mb-4 font-serif '>Upto 20% off on Wise E-commerce Products</h1>
-                                <h1 className='text-6xl	mb-5'>CHOOSE YOUR BRAIN FOOD</h1>
+                                <h1 className='text-6xl	mb-5 font-bold'>THINK AND GROW RICH</h1>
                                 <p className='text-xl font-serif '>Cover up front of book and leave summary</p>
                             </div>
                             <div>
