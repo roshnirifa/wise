@@ -71,7 +71,7 @@ const Header = () => {
 
                                 </label>
                                 <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li> <a> {user && user.displayName}<span class="badge">New</span></a> </li>
+                                    <li> <Link to='/userProfile'> {user && user.displayName}<span class="badge">New</span></Link> </li>
                                     <li><a>My Order</a></li>
                                     <li><a>wishlist</a></li>
                                     <li onClick={handleSignOut}><a>Logout</a></li>

@@ -42,12 +42,12 @@ const Register = () => {
         e.preventDefault();
 
         if (pass !== confirmPass) {
-            setError(<p className='text-red-500 mb-4'> your password didn't match </p>
+            setError(<p className='text-red-500 mb-4 text-center'> your password didn't match </p>
             )
             return;
         }
         if (pass.length < 6) {
-            setError(<p className='text-red-500 mb-4'> password should be 6 character long </p>
+            setError(<p className='text-red-500 mb-4 text-center'> password should be 6 character long </p>
             )
 
             return;
