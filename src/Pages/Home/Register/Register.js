@@ -68,7 +68,7 @@ const Register = () => {
     return (
         <div className='login p-5'>
             <div className='mx-auto login-container my-4'>
-                <h2 className='text-3xl text-center pt-8 mt-5 font-bold text-primary'>Please SignUp!!!!!</h2>
+                <h2 className='text-3xl text-center pt-8 mt-5 font-bold text-primary'> SignUp</h2>
 
                 <form onSubmit={handleSubmit} className=' m-5'>
                     <div className='text-center'>
