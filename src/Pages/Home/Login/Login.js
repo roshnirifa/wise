@@ -53,7 +53,7 @@ const Login = () => {
 
         if (email) {
             await sendPasswordResetEmail(email);
-            toast('Sent email');
+            toast(' email sent');
         }
         else {
             toast('please enter your email address');
@@ -68,7 +68,7 @@ const Login = () => {
         <div className='login p-5'>
             <div className='mx-auto login-container '>
                 <div>
-                    <h2 className=' text-3xl text-center pt-8 mt-5 text-primary font-bold '>Please login!!!!!</h2>
+                    <h2 className=' text-3xl text-center pt-8 mt-5 text-primary font-bold '> Login</h2>
                 </div>
                 <form onSubmit={handleSubmit} className='m-5'>
 
