@@ -1,0 +1,30 @@
+.recomendedBooks {
+    background-color: #e9e7e7;
+}
+
+.title {
+    color: #1A1668;
+
+}
+
+.bookSwiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+
+.bookslide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+
+}
+
+.bookslide img {
+
+    padding: 20px;
+    width: 400px;
+    height: 400px;
+
+}
