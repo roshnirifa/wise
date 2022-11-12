@@ -1,0 +1,17 @@
+.icon {
+    background-color: rgb(245, 217, 217);
+    font-size: 30px;
+    color: #EAA451;
+}
+
+.icon:hover {
+    background-color: #EAA451;
+    color: #fff;
+
+}
+
+.service-description {
+    color: rgb(147, 144, 144);
+    font-size: 16px;
+
+}

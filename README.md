@@ -13,6 +13,7 @@
 * React loading
 * React Toastify
 * swiperjs (for animation and slide)
+* React Icon
 
 
 
