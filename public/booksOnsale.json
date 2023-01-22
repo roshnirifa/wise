@@ -2,8 +2,8 @@
     {
         "id": "1",
         "name": "Take Tango",
-        "previousPrice": "$800",
-        "price": "$300",
+        "price": "$500",
+        "previousPrice": "$1000",
         "quantity": "10",
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
@@ -14,8 +14,8 @@
     {
         "id": "2",
         "name": "Thunder Stunt",
-        "price": "$100",
-        "previousPrice": "$500",
+        "price": "$500",
+        "previousPrice": "$1200",
         "quantity": "10",
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
@@ -24,39 +24,51 @@
         "img": "https://i.ibb.co/T2Ft8bb/book4.jpg"
     },
     {
-        "id": "4",
-        "name": "The Missadventure",
-        "price": "$600",
-        "previousPrice": "$1000",
+        "id": "3",
+        "name": "Cat Adverture",
+        "price": "$500",
+        "previousPrice": "$800",
         "quantity": "10",
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem  ",
-        "img": "https://i.ibb.co/y4ymJcd/book7.jpg"
+        "img": "https://i.ibb.co/PmkbGzJ/book5.jpg"
     },
     {
-        "id": "5",
-        "name": "Battle Drive",
-        "price": "$200",
+        "id": "4",
+        "name": "Home",
+        "price": "$500",
         "previousPrice": "$900",
         "quantity": "10",
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem  ",
-        "img": "https://i.ibb.co/9T8f02x/book8.jpg"
+        "img": "https://i.ibb.co/qjp3Sp1/book6.jpg"
     },
     {
-        "id": "6",
-        "name": "Real Life",
+        "id": "5",
+        "name": "All Good News",
         "price": "$500",
-        "previousPrice": "$1300",
+        "previousPrice": "$1200",
         "quantity": "10",
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem  ",
-        "img": "https://i.ibb.co/TghdBnd/book11.jpg"
+        "img": "https://i.ibb.co/kB8QHMH/book9.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Seconds",
+        "price": "$500",
+        "previousPrice": "$900",
+        "quantity": "10",
+        "writter": "Kevin Smiley",
+        "Publisher": "Printarea Studios",
+        "Year": "2012",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem  ",
+        "img": "https://i.ibb.co/bmY05VL/book10.jpg"
     }
 ]

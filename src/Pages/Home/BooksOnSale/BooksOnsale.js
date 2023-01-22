@@ -15,7 +15,7 @@ const BooksOnsale = () => {
             <div className='flex justify-between	'>
                 <h1 className='text-4xl text-secondary font-bold ml-24 pt-8 '>Books On Sale</h1>
 
-                <div lassName='  '>
+                <div className='  '>
                     <div className="grid grid-flow-col gap-5 text-center auto-cols-max mr-24 mt-3">
                         <div className="flex flex-col p-2 bg-primary rounded-box text-neutral-content">
                             <span className="countdown font-mono text-5xl">

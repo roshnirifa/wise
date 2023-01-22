@@ -5,17 +5,19 @@ import BooksOnsale from './BooksOnSale/BooksOnsale';
 import HeaderItems from './Header/HeaderItems/HeaderItems';
 import OurService from './OurService/OurService';
 import RecomendedBooks from './RecomendedBooks/RecomendedBooks';
+import Testimonial from './Testimonial/Testimonial';
+import Testimonials from './Testimonials/Testimonials';
 
 
 const Home = () => {
     return (
-        <div>
+        <div >
             <HeaderItems></HeaderItems>
             <Banner></Banner>
             <RecomendedBooks></RecomendedBooks>
             <OurService></OurService>
             <BooksOnsale></BooksOnsale>
-            <p>rifa</p>
+            <Testimonials></Testimonials>
 
         </div>
     );
