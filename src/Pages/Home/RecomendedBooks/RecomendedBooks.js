@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
+import BooksOnsale from '../BooksOnSale/BooksOnsale';
 
 const RecomendedBooks = () => {
     const { recommendedBooks } = UseRecommendedBooks();
@@ -46,7 +47,9 @@ const RecomendedBooks = () => {
                     modules={[EffectCoverflow, Pagination, Autoplay]}
                     className="bookSwiper  ">
 
-                    {
+                    <SwiperSlide><BooksOnsale></BooksOnsale></SwiperSlide>
+
+                    {/* {
                         recommendedBooks.map(recommendedBook => <SwiperSlide className='bookslide mb-12'>
 
                             <img src={recommendedBook.img} alt="" />
@@ -63,7 +66,7 @@ const RecomendedBooks = () => {
 
 
                         </SwiperSlide>)
-                    }
+                    } */}
 
 
 
