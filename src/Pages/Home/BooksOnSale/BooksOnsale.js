@@ -112,6 +112,7 @@ const BooksOnsale = () => {
 
                                         className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
                                     </button>
+                                    <button className='btn btn-info ml-5'><Link to={`/featureDetails/${bookOnSale.id}`}>Details</Link></button>
                                 </div>
 
 

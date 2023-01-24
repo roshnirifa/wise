@@ -11,8 +11,7 @@ import UserProfile from './Pages/UserProfile/UserProfile';
 import { ToastContainer } from 'react-toastify';
 import CartCalculation from './Pages/Home/CartCalculation/CartCalculation';
 import Cart from './Pages/Home/BooksOnSale/Cart';
-import FeatureProduct from './Pages/Home/FeatureProduct/FeatureProduct';
-import FeatureCard from './Pages/Home/FeatureProduct/FeatureCard';
+
 import FeatureDetails from './Pages/FeatureDetails/FeatureDetails';
 
 function App() {
@@ -27,7 +26,7 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/userProfile' element={<UserProfile></UserProfile>}></Route>
         <Route path='/cartcalculation' element={<CartCalculation></CartCalculation>}></Route>
-        <Route path='/feature' element={<FeatureProduct></FeatureProduct>}></Route>
+
         <Route path='/featureDetails/:id' element={<FeatureDetails></FeatureDetails>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
 
