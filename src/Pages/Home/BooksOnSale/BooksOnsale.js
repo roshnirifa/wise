@@ -61,6 +61,7 @@ const BooksOnsale = () => {
     return (
 
         <section className=' '>
+
             <div className='cart'>
                 <Cart clearCart={clearCart} cart={cart}>
                     <Link to="/cartcalculation">
@@ -68,6 +69,8 @@ const BooksOnsale = () => {
                     </Link>
                 </Cart>
             </div>
+
+           
 
 
 
