@@ -1,6 +1,9 @@
 import React from 'react';
 import Banner from './Banner/Banner';
 import BooksOnsale from './BooksOnSale/BooksOnsale';
+import Cart from './BooksOnSale/Cart';
+import CartCalculation from './CartCalculation/CartCalculation';
+
 
 import HeaderItems from './Header/HeaderItems/HeaderItems';
 import OurService from './OurService/OurService';
@@ -18,6 +21,7 @@ const Home = () => {
             <OurService></OurService>
             <BooksOnsale></BooksOnsale>
             <Testimonials></Testimonials>
+
 
         </div>
     );

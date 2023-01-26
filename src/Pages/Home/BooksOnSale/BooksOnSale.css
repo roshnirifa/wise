@@ -1,3 +1,7 @@
 .previousPrice {
     color: #939090;
 }
+
+.cart {
+    display: none;
+}
