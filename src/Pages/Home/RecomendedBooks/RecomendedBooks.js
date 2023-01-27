@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import UseRecommendedBooks from '../../UseRecommendedBooks/UseRecommendedBooks';
 
 import './RecomendedBooks.css'
@@ -9,50 +9,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
-import UseBooksOnSale from '../../UseBooksOnSale/UseBooksOnSale';
-import { addToDb, getStoredCart } from '../../../utilitis/fakedb';
-import { Link } from 'react-router-dom';
-
-
 
 const RecomendedBooks = () => {
-    const { booksOnSale } = UseBooksOnSale();
-
-    const [cart, setCart] = useState([]);
-
-
-
-    //jubair//
-    // const navigate = useNavigate()
-    useEffect(() => {
-        const storedCart = getStoredCart();
-        const savedCart = [];
-        for (const id in storedCart) {
-            const addedProduct = booksOnSale.find(product => product.id === id);
-            // console.log(addedProduct);
-            if (addedProduct) {
-                const quantity = storedCart[id];
-                addedProduct.quantity = quantity;
-                savedCart.push(addedProduct)
-                console.log(addedProduct);
-
-            }
-        }
-        setCart(savedCart);
-    }, [booksOnSale]);
-
-    const handleAddtoClick = (bookOnSale) => {
-
-
-
-        const newCart = [...cart, bookOnSale];
-        setCart(newCart);
-
-        // console.log(cart);
-
-        addToDb(bookOnSale.id)
-    }
-
+    const { recommendedBooks } = UseRecommendedBooks();
     return (
         <section className='recomendedBooks py-4'>
 
@@ -87,22 +46,16 @@ const RecomendedBooks = () => {
                     modules={[EffectCoverflow, Pagination, Autoplay]}
                     className="bookSwiper  ">
 
-
-
                     {
-                        booksOnSale.map(bookOnSale => <SwiperSlide className='bookslide mb-12'>
+                        recommendedBooks.map(recommendedBook => <SwiperSlide className='bookslide mb-12'>
 
-                            <img src={bookOnSale.img} alt="" />
+                            <img src={recommendedBook.img} alt="" />
                             <div className='text-center'>
-                                <h3 className='text-center text-2xl text-secondary font-bold'>{bookOnSale.name}</h3>
-                                <h3 className='text-center text-2xl text-primary font-bold'>{bookOnSale.price}</h3>
+                                <h3 className='text-center text-2xl text-secondary font-bold'>{recommendedBook.name}</h3>
+                                <h3 className='text-center text-2xl text-primary font-bold'>{recommendedBook.price}</h3>
 
                                 <div className='mt-2'>
-                                    <button
-                                        onClick={() => handleAddtoClick(bookOnSale)}
-
-                                        className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
-                                    </button>
+                                    <button className='btn btn-secondary px-12'>Buy Now</button>
                                 </div>
 
 
