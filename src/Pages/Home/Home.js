@@ -3,6 +3,7 @@ import Banner from './Banner/Banner';
 import BooksOnsale from './BooksOnSale/BooksOnsale';
 import Cart from './BooksOnSale/Cart';
 import CartCalculation from './CartCalculation/CartCalculation';
+import CartTotal from './CartCalculation/CartTotal';
 
 
 import HeaderItems from './Header/HeaderItems/HeaderItems';

@@ -14,6 +14,9 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Cart from './Cart';
 import { addToDb, deleteShoppingCart, getStoredCart } from '../../../utilitis/fakedb';
 import { useEffect } from 'react';
+
+
+
 const BooksOnsale = () => {
     const { booksOnSale } = UseBooksOnSale();
 
@@ -22,6 +25,11 @@ const BooksOnsale = () => {
     const clearCart = () => {
         setCart([]);
         deleteShoppingCart()
+    }
+
+    const navigate = useNavigate()
+    const handleCheckOut = (id) => {
+        navigate(`/featureDetails/${id}`)
     }
 
 
@@ -101,7 +109,7 @@ const BooksOnsale = () => {
 
                                 <div className='flex justify-center'>
 
-                                    <h3 className='text-center text-xl text-primary font-bold mr-5'>{bookOnSale.price}</h3>
+                                    <h3 className='text-center text-xl text-primary font-bold mr-5'>${bookOnSale.price}</h3>
                                     <h3 className='text-center text-xl previousPrice font-bold'><del>{bookOnSale.previousPrice}</del></h3>
 
                                 </div>
@@ -112,7 +120,7 @@ const BooksOnsale = () => {
 
                                         className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
                                     </button>
-                                    <button className='btn btn-info ml-5'><Link to={`/featureDetails/${bookOnSale.id}`}>Details</Link></button>
+                                    <button onClick={() => handleCheckOut(bookOnSale.id)} className='btn btn-info ml-5'>Details</button>
                                 </div>
 
 

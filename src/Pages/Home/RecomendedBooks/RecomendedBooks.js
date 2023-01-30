@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom';
 
 
 const RecomendedBooks = () => {
-    const { booksOnSale } = UseBooksOnSale();
+    const { recommendedBooks } = UseBooksOnSale();
 
     const [cart, setCart] = useState([]);
 
@@ -28,7 +28,7 @@ const RecomendedBooks = () => {
         const storedCart = getStoredCart();
         const savedCart = [];
         for (const id in storedCart) {
-            const addedProduct = booksOnSale.find(product => product.id === id);
+            const addedProduct = recommendedBooks.find(product => product.id === id);
             // console.log(addedProduct);
             if (addedProduct) {
                 const quantity = storedCart[id];
@@ -39,18 +39,18 @@ const RecomendedBooks = () => {
             }
         }
         setCart(savedCart);
-    }, [booksOnSale]);
+    }, [recommendedBooks]);
 
-    const handleAddtoClick = (bookOnSale) => {
+    const handleAddtoClick = (recommendedBooks) => {
 
 
 
-        const newCart = [...cart, bookOnSale];
+        const newCart = [...cart, recommendedBooks];
         setCart(newCart);
 
         // console.log(cart);
 
-        addToDb(bookOnSale.id)
+        addToDb(recommendedBooks.id)
     }
 
     return (
@@ -90,16 +90,16 @@ const RecomendedBooks = () => {
 
 
                     {
-                        booksOnSale.map(bookOnSale => <SwiperSlide className='bookslide mb-12'>
+                        recommendedBooks.map(recommendedBooks => <SwiperSlide className='bookslide mb-12'>
 
-                            <img src={bookOnSale.img} alt="" />
+                            <img src={recommendedBooks.img} alt="" />
                             <div className='text-center'>
-                                <h3 className='text-center text-2xl text-secondary font-bold'>{bookOnSale.name}</h3>
-                                <h3 className='text-center text-2xl text-primary font-bold'>{bookOnSale.price}</h3>
+                                <h3 className='text-center text-2xl text-secondary font-bold'>{recommendedBooks.name}</h3>
+                                <h3 className='text-center text-2xl text-primary font-bold'>${recommendedBooks.price}</h3>
 
                                 <div className='mt-2'>
                                     <button
-                                        onClick={() => handleAddtoClick(bookOnSale)}
+                                        onClick={() => handleAddtoClick(recommendedBooks)}
 
                                         className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
                                     </button>

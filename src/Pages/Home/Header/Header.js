@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
 import logo from '../../../img/logo.png'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebaseInit';
 import UseBooksOnSale from '../../UseBooksOnSale/UseBooksOnSale';
+import { removeFromDb } from '../../../utilitis/fakedb';
 
 const Header = () => {
 
     const { initialCart } = UseBooksOnSale();
     const [user] = useAuthState(auth);
+
+    const [cart, setCart] = useState(initialCart)
+    const handleRemoveItem = (id) => {
+        const remaining = cart.filter(product => product.id !== id)
+        console.log(remaining);
+        setCart(remaining);
+        removeFromDb(id)
+    }
 
 
 
@@ -43,10 +52,11 @@ const Header = () => {
 
                         <div tabindex="0" class="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow ">
                             <div class="card-body">
-                                <span class="font-bold text-lg">{initialCart.length}</span>
-                                <span class="text-info">Subtotal: $999</span>
+                                <span class="font-bold text-lg">
+                                    {initialCart.length}</span>
+                                {/* <span class="text-info">Subtotal: $999</span> */}
                                 <div class="card-actions">
-                                    <button class="btn btn-primary btn-block"><Link to="/cartcalculation">Cart</Link></button>
+                                    <button class="btn btn-primary w-11/12"><Link to="/cartcalculation">Cart</Link></button>
                                 </div>
                             </div>
                         </div>
