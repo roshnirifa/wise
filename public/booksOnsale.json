@@ -10,9 +10,7 @@
         "Publisher": "Printarea Studios",
         "Year": "2012",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem  ",
-        "img": "https://i.ibb.co/BBc8jWh/book3.jpg",
-        "next": 1,
-        "prev": 5
+        "img": "https://i.ibb.co/BBc8jWh/book3.jpg"
     },
     {
         "id": "2",
@@ -25,9 +23,20 @@
         "Publisher": "Printarea Studios",
         "Year": "2012",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem  ",
-        "img": "https://i.ibb.co/T2Ft8bb/book4.jpg",
-        "next": 2,
-        "prev": 4
+        "img": "https://i.ibb.co/T2Ft8bb/book4.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Cat Adverture",
+        "price": 500,
+        "previousPrice": "$800",
+        "quantity": 10,
+        "subQuantity": 1,
+        "writter": "Kevin Smiley",
+        "Publisher": "Printarea Studios",
+        "Year": "2012",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem  ",
+        "img": "https://i.ibb.co/PmkbGzJ/book5.jpg"
     },
     {
         "id": "4",
@@ -40,9 +49,7 @@
         "Publisher": "Printarea Studios",
         "Year": "2012",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem  ",
-        "img": "https://i.ibb.co/y4ymJcd/book7.jpg",
-        "next": 3,
-        "prev": 2
+        "img": "https://i.ibb.co/y4ymJcd/book7.jpg"
     },
     {
         "id": "5",
@@ -55,13 +62,11 @@
         "Publisher": "Printarea Studios",
         "Year": "2012",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem  ",
-        "img": "https://i.ibb.co/9T8f02x/book8.jpg",
-        "next": 4,
-        "prev": 3
+        "img": "https://i.ibb.co/9T8f02x/book8.jpg"
     },
     {
         "id": "6",
-        "name": "Real Life",
+        "name": "Seconds",
         "price": 500,
         "previousPrice": "$1300",
         "quantity": 1,
@@ -70,8 +75,6 @@
         "Publisher": "Printarea Studios",
         "Year": "2012",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem  ",
-        "img": "https://i.ibb.co/TghdBnd/book11.jpg",
-        "next": 5,
-        "prev": 1
+        "img": "https://i.ibb.co/TghdBnd/book11.jpg"
     }
 ]
