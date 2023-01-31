@@ -13,6 +13,7 @@ import CartCalculation from './Pages/Home/CartCalculation/CartCalculation';
 import Cart from './Pages/Home/BooksOnSale/Cart';
 
 import FeatureDetails from './Pages/FeatureDetails/FeatureDetails';
+import RequireAuth from './Pages/Home/Login/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -25,9 +26,28 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/userProfile' element={<UserProfile></UserProfile>}></Route>
-        <Route path='/cartcalculation' element={<CartCalculation></CartCalculation>}></Route>
 
-        <Route path='/featureDetails/:id' element={<FeatureDetails></FeatureDetails>}></Route>
+
+
+
+
+        <Route path='/cartcalculation' element={
+          <RequireAuth>
+            <CartCalculation></CartCalculation>
+          </RequireAuth>
+        }>
+
+        </Route>
+
+        <Route path='/featureDetails/:id' element={
+          <RequireAuth>
+            <FeatureDetails></FeatureDetails>
+          </RequireAuth>
+        }>
+
+        </Route>
+
+
         <Route path='*' element={<NotFound></NotFound>}></Route>
 
       </Routes>
