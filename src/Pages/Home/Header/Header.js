@@ -56,7 +56,10 @@ const Header = () => {
                                     {initialCart.length}</span>
                                 {/* <span class="text-info">Subtotal: $999</span> */}
                                 <div class="card-actions">
-                                    <button class="btn btn-primary w-11/12"><Link to="/cartcalculation">Cart</Link></button>
+
+
+                                    <button class="btn btn-primary w-11/12">  <Link to="/cartcalculation">Cart</Link></button>
+
                                 </div>
                             </div>
                         </div>

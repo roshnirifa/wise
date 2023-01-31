@@ -29,7 +29,7 @@ const BooksOnsale = () => {
 
     const navigate = useNavigate()
     const handleCheckOut = (id) => {
-        navigate(/featureDetails/${id})
+        navigate(`/featureDetails/${id}`)
     }
 
 
@@ -78,7 +78,7 @@ const BooksOnsale = () => {
                 </Cart>
             </div>
 
-           
+
 
 
 
@@ -123,7 +123,10 @@ const BooksOnsale = () => {
 
                                         className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
                                     </button>
-                                    <button onClick={() => handleCheckOut(bookOnSale.id)} className='btn btn-info ml-5'>Details</button>
+
+                                    <button onClick={() => handleCheckOut(bookOnSale.id)} className='btn btn-info ml-5'>Details
+                                    </button>
+
                                 </div>
 
 
