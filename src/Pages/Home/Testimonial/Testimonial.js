@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Testimonial.css"
 
 
 const Testimonial = (props) => {
@@ -7,8 +8,8 @@ const Testimonial = (props) => {
 
 
 
-        <div class="card w-96 bg-primary text-primary-content pb-5 ">
-            <div class="card-body">
+        <div class="card w-96 bg-primary text-primary-content">
+            <div class="card-body ">
                 <div class="rating">
                     <input type="radio" name="rating-2" class="mask mask-star-2 bg-white " />
                     <input type="radio" name="rating-2" class="mask mask-star-2  bg-white" checked />

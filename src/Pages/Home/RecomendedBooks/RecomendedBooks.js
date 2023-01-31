@@ -107,8 +107,8 @@ const RecomendedBooks = () => {
                                         className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
                                     </button>
 
-                                    <button onClick={() => handleCheckOut(recommendedBooks.id)} className='btn btn-info ml-5'>Details
-                                    </button>
+                                    {/* <button onClick={() => handleCheckOut(recommendedBooks.id)} className='btn btn-info ml-5'>Details
+                                    </button> */}
 
                                 </div>
 

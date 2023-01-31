@@ -6,7 +6,7 @@ import './Testimonails.css'
 const Testimonials = () => {
     const { testimonials } = UseTestimonial()
     return (
-        <div className='p-12'>
+        <div className='m-12'>
             <div>
                 <h1 className='text-4xl text-secondary font-bold  '>Testimonial</h1>
                 <p className='w-1/2 service-description my-5 text-lg'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>

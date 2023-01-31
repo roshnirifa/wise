@@ -28,10 +28,6 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/userProfile' element={<UserProfile></UserProfile>}></Route>
 
-
-
-
-
         <Route path='/cartcalculation' element={
           <RequireAuth>
             <CartCalculation></CartCalculation>

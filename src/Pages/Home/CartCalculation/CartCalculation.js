@@ -40,7 +40,7 @@ const CartCalculation = () => {
                                 <h1 className="mb-5 text-5xl font-bold p-20">CART</h1>
 
                                 <div className='py-2'>
-                                    <button className="btn btn-primary w-1/2"><Link to="/">Home</Link></button>
+                                    <button className="btn btn-primary w-1/2"><a href="/home">Home</a></button>
                                 </div>
                             </div>
                         </div>

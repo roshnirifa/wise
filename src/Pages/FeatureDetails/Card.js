@@ -6,7 +6,7 @@ const Card = ({ bookOnSale }) => {
 
 
     return (
-        <div className='grid gap-10 grid-cols-2'>
+        <div className='grid gap-10 grid-cols-2 mb-12'>
 
             <div className='border-2 grid grid-cols-2 border-b-2 rounded'>
 
