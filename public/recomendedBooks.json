@@ -1,9 +1,10 @@
 [
     {
-        "id": "1",
+        "id": "11",
         "name": "Terrible",
-        "price": "$500",
+        "price": 500,
         "quantity": "10",
+        "subQuantity": 1,
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
@@ -11,10 +12,11 @@
         "img": "https://i.ibb.co/nMg4XJx/book1.jpg"
     },
     {
-        "id": "2",
+        "id": "12",
         "name": "A Heavy Lift",
-        "price": "$500",
+        "price": 500,
         "quantity": "10",
+        "subQuantity": 1,
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
@@ -22,10 +24,11 @@
         "img": "https://i.ibb.co/JK7fgff/book2.jpg"
     },
     {
-        "id": "3",
+        "id": "13",
         "name": "Take Tango",
-        "price": "$500",
+        "price": 500,
         "quantity": "10",
+        "subQuantity": 1,
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
@@ -33,10 +36,11 @@
         "img": "https://i.ibb.co/BBc8jWh/book3.jpg"
     },
     {
-        "id": "4",
+        "id": "14",
         "name": "Thunder Stunt",
-        "price": "$500",
+        "price": 500,
         "quantity": "10",
+        "subQuantity": 1,
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
@@ -44,10 +48,11 @@
         "img": "https://i.ibb.co/T2Ft8bb/book4.jpg"
     },
     {
-        "id": "5",
+        "id": "15",
         "name": "Cat Adverture",
-        "price": "$500",
+        "price": 500,
         "quantity": "10",
+        "subQuantity": 1,
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
@@ -55,10 +60,11 @@
         "img": "https://i.ibb.co/PmkbGzJ/book5.jpg"
     },
     {
-        "id": "6",
+        "id": "16",
         "name": "Home",
-        "price": "$500",
+        "price": 500,
         "quantity": "10",
+        "subQuantity": 1,
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
@@ -66,10 +72,11 @@
         "img": "https://i.ibb.co/qjp3Sp1/book6.jpg"
     },
     {
-        "id": "7",
+        "id": "17",
         "name": "The Missadventure",
-        "price": "$500",
+        "price": 500,
         "quantity": "10",
+        "subQuantity": 1,
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
@@ -77,10 +84,11 @@
         "img": "https://i.ibb.co/y4ymJcd/book7.jpg"
     },
     {
-        "id": "8",
+        "id": "18",
         "name": "Battle Drive",
-        "price": "$500",
+        "price": 500,
         "quantity": "10",
+        "subQuantity": 1,
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
@@ -88,10 +96,11 @@
         "img": "https://i.ibb.co/9T8f02x/book8.jpg"
     },
     {
-        "id": "9",
+        "id": "19",
         "name": "All Good News",
-        "price": "$500",
+        "price": 500,
         "quantity": "10",
+        "subQuantity": 1,
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
@@ -99,10 +108,11 @@
         "img": "https://i.ibb.co/kB8QHMH/book9.jpg"
     },
     {
-        "id": "10",
+        "id": "20",
         "name": "Seconds",
-        "price": "$500",
+        "price": 500,
         "quantity": "10",
+        "subQuantity": 1,
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",
@@ -110,10 +120,11 @@
         "img": "https://i.ibb.co/bmY05VL/book10.jpg"
     },
     {
-        "id": "11",
+        "id": "21",
         "name": "Real Life",
-        "price": "$500",
+        "price": 500,
         "quantity": "10",
+        "subQuantity": 1,
         "writter": "Kevin Smiley",
         "Publisher": "Printarea Studios",
         "Year": "2012",

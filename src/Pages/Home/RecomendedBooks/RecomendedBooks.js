@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import UseRecommendedBooks from '../../UseRecommendedBooks/UseRecommendedBooks';
 
 import './RecomendedBooks.css'
@@ -9,9 +9,50 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
+import UseBooksOnSale from '../../UseBooksOnSale/UseBooksOnSale';
+import { addToDb, getStoredCart } from '../../../utilitis/fakedb';
+import { Link } from 'react-router-dom';
+
+
 
 const RecomendedBooks = () => {
-    const { recommendedBooks } = UseRecommendedBooks();
+    const { recommendedBooks } = UseBooksOnSale();
+
+    const [cart, setCart] = useState([]);
+
+
+
+    //jubair//
+    // const navigate = useNavigate()
+    useEffect(() => {
+        const storedCart = getStoredCart();
+        const savedCart = [];
+        for (const id in storedCart) {
+            const addedProduct = recommendedBooks.find(product => product.id === id);
+            // console.log(addedProduct);
+            if (addedProduct) {
+                const quantity = storedCart[id];
+                addedProduct.quantity = quantity;
+                savedCart.push(addedProduct)
+                console.log(addedProduct);
+
+            }
+        }
+        setCart(savedCart);
+    }, [recommendedBooks]);
+
+    const handleAddtoClick = (recommendedBooks) => {
+
+
+
+        const newCart = [...cart, recommendedBooks];
+        setCart(newCart);
+
+        // console.log(cart);
+
+        addToDb(recommendedBooks.id)
+    }
+
     return (
         <section className='recomendedBooks py-4'>
 
@@ -46,16 +87,22 @@ const RecomendedBooks = () => {
                     modules={[EffectCoverflow, Pagination, Autoplay]}
                     className="bookSwiper  ">
 
-                    {
-                        recommendedBooks.map(recommendedBook => <SwiperSlide className='bookslide mb-12'>
 
-                            <img src={recommendedBook.img} alt="" />
+
+                    {
+                        recommendedBooks.map(recommendedBooks => <SwiperSlide className='bookslide mb-12'>
+
+                            <img src={recommendedBooks.img} alt="" />
                             <div className='text-center'>
-                                <h3 className='text-center text-2xl text-secondary font-bold'>{recommendedBook.name}</h3>
-                                <h3 className='text-center text-2xl text-primary font-bold'>{recommendedBook.price}</h3>
+                                <h3 className='text-center text-2xl text-secondary font-bold'>{recommendedBooks.name}</h3>
+                                <h3 className='text-center text-2xl text-primary font-bold'>${recommendedBooks.price}</h3>
 
                                 <div className='mt-2'>
-                                    <button className='btn btn-secondary px-12'>Buy Now</button>
+                                    <button
+                                        onClick={() => handleAddtoClick(recommendedBooks)}
+
+                                        className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
+                                    </button>
                                 </div>
 
 

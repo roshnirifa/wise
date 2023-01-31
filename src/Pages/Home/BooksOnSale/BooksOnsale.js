@@ -1,7 +1,13 @@
 import React from 'react';
 import UseBooksOnSale from '../../UseBooksOnSale/UseBooksOnSale';
 import { Swiper, SwiperSlide } from "swiper/react";
-import './BooksOnSale.css';
+import './BooksOnSale.css'
+
+// Import Swiper styles
+
+
+
+import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 import { useState } from 'react';
 import CartCalculation from '../CartCalculation/CartCalculation';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
@@ -9,19 +15,24 @@ import Cart from './Cart';
 import { addToDb, deleteShoppingCart, getStoredCart } from '../../../utilitis/fakedb';
 import { useEffect } from 'react';
 
-// Import Swiper styles
-import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 
 
 const BooksOnsale = () => {
     const { booksOnSale } = UseBooksOnSale();
-    // cart
+
     const [cart, setCart] = useState([]);
 
     const clearCart = () => {
         setCart([]);
         deleteShoppingCart()
     }
+
+    const navigate = useNavigate()
+    const handleCheckOut = (id) => {
+        navigate(/featureDetails/${id})
+    }
+
+
     //jubair//
     // const navigate = useNavigate()
     useEffect(() => {
@@ -54,9 +65,10 @@ const BooksOnsale = () => {
     }
 
     //jubairClose//
-    return (
-        <section className=' '>
 
+    return (
+
+        <section className=' '>
 
             <div className='cart'>
                 <Cart clearCart={clearCart} cart={cart}>
@@ -66,40 +78,9 @@ const BooksOnsale = () => {
                 </Cart>
             </div>
 
+           
 
 
-            <div className='flex justify-between	'>
-                <h1 className='text-4xl text-secondary font-bold ml-24 pt-8 '>Books On Sale</h1>
-
-                <div lassName='  '>
-                    <div className="grid grid-flow-col gap-5 text-center auto-cols-max mr-24 mt-3">
-                        <div className="flex flex-col p-2 bg-primary rounded-box text-neutral-content">
-                            <span className="countdown font-mono text-5xl">
-                                <span style={{ "--value": 15 }}></span>
-                            </span>
-                            days
-                        </div>
-                        <div className="flex flex-col p-2 bg-primary rounded-box text-neutral-content">
-                            <span className="countdown font-mono text-5xl">
-                                <span style={{ "--value": 10 }}></span>
-                            </span>
-                            hours
-                        </div>
-                        <div className="flex flex-col p-2 bg-primary rounded-box text-neutral-content">
-                            <span className="countdown font-mono text-5xl">
-                                <span style={{ "--value": 24 }}></span>
-                            </span>
-                            min
-                        </div>
-                        <div className="flex flex-col p-2 bg-primary rounded-box text-neutral-content">
-                            <span className="countdown font-mono text-5xl">
-                                <span style={{ "--value": 40 }}></span>
-                            </span>
-                            sec
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div className='container mx-auto px-5 '>
                 <Swiper
@@ -114,10 +95,10 @@ const BooksOnsale = () => {
                         modifier: 1,
                         slideShadows: false,
                     }}
-                    // autoplay={{
-                    //     delay: 2000,
-                    //     disableOnInteraction: false,
-                    // }}
+                    autoplay={{
+                        delay: 2000,
+                        disableOnInteraction: false,
+                    }}
                     pagination={false}
                     modules={[EffectCoverflow, Pagination, Autoplay]}
                     className="bookSwiper  ">
@@ -131,7 +112,7 @@ const BooksOnsale = () => {
 
                                 <div className='flex justify-center'>
 
-                                    <h3 className='text-center text-xl text-primary font-bold mr-5'>{bookOnSale.price}</h3>
+                                    <h3 className='text-center text-xl text-primary font-bold mr-5'>${bookOnSale.price}</h3>
                                     <h3 className='text-center text-xl previousPrice font-bold'><del>{bookOnSale.previousPrice}</del></h3>
 
                                 </div>
@@ -142,7 +123,7 @@ const BooksOnsale = () => {
 
                                         className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
                                     </button>
-                                    <button className='btn btn-info ml-5'><Link to={`/featureDetails/${bookOnSale.id}`}>Details</Link></button>
+                                    <button onClick={() => handleCheckOut(bookOnSale.id)} className='btn btn-info ml-5'>Details</button>
                                 </div>
 
 
