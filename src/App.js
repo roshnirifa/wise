@@ -14,6 +14,7 @@ import Cart from './Pages/Home/BooksOnSale/Cart';
 
 import FeatureDetails from './Pages/FeatureDetails/FeatureDetails';
 import RequireAuth from './Pages/Home/Login/RequireAuth/RequireAuth';
+import Footer from './Pages/Home/Footer/Footer';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
 
       </Routes>
       <ToastContainer></ToastContainer>
+      <Footer></Footer>
     </div>
   );
 }
