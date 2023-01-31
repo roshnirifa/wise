@@ -1,0 +1,26 @@
+.banerImg {
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+}
+
+.Allicon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+
+}
+
+.mainIcon {
+    margin-left: 500px;
+}
+
+.pad {
+    padding-left: 400px;
+    padding-right: 140px;
+}
+
+.card {
+    width: 400px;
+    height: 200px;
+}
