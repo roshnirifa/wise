@@ -31,7 +31,7 @@ const BooksOnsale = () => {
 
     const navigate = useNavigate()
     const handleCheckOut = (id) => {
-        navigate(`/featureDetails/${id}`)
+        navigate(/featureDetails/${id})
     }
 
 
