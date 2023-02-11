@@ -1,4 +1,5 @@
 import React from 'react';
+import RecomandDetails from '../RecomandDetails/RecomandDetails';
 import Banner from './Banner/Banner';
 import BooksOnsale from './BooksOnSale/BooksOnsale';
 import Cart from './BooksOnSale/Cart';
@@ -21,6 +22,7 @@ const Home = () => {
             <RecomendedBooks></RecomendedBooks>
             <OurService></OurService>
             <BooksOnsale></BooksOnsale>
+
             <Testimonials></Testimonials>
 
 

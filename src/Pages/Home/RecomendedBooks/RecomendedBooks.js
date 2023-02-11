@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 import UseBooksOnSale from '../../UseBooksOnSale/UseBooksOnSale';
 import { addToDb, getStoredCart } from '../../../utilitis/fakedb';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -20,7 +20,11 @@ const RecomendedBooks = () => {
 
     const [cart, setCart] = useState([]);
 
+    const navigate = useNavigate()
 
+    const handleCheckOut = (id) => {
+        navigate(`/recomandDetails/${id}`)
+    }
 
     //jubair//
     // const navigate = useNavigate()
@@ -103,6 +107,7 @@ const RecomendedBooks = () => {
 
                                         className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
                                     </button>
+                                    <button onClick={() => handleCheckOut(recommendedBooks.id)} className='btn btn-info ml-5'>Details</button>
                                 </div>
 
 

@@ -14,18 +14,20 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Cart from './Cart';
 import { addToDb, deleteShoppingCart, getStoredCart } from '../../../utilitis/fakedb';
 import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 
 
 const BooksOnsale = () => {
     const { booksOnSale } = UseBooksOnSale();
 
-    const [cart, setCart] = useState([]);
+    // const [cart, setCart] = useState([]);
+    const [carts, setCart] = useState();
 
-    const clearCart = () => {
-        setCart([]);
-        deleteShoppingCart()
-    }
+    // const clearCart = () => {
+    //     setCart([]);
+    //     deleteShoppingCart()
+    // }
 
     const navigate = useNavigate()
     const handleCheckOut = (id) => {
@@ -35,34 +37,49 @@ const BooksOnsale = () => {
 
     //jubair//
     // const navigate = useNavigate()
-    useEffect(() => {
-        const storedCart = getStoredCart();
-        const savedCart = [];
-        for (const id in storedCart) {
-            const addedProduct = booksOnSale.find(product => product.id === id);
-            // console.log(addedProduct);
-            if (addedProduct) {
-                const quantity = storedCart[id];
-                addedProduct.quantity = quantity;
-                savedCart.push(addedProduct)
-                console.log(addedProduct);
+    // useEffect(() => {
+    //     const storedCart = getStoredCart();
+    //     const savedCart = [];
+    //     for (const id in storedCart) {
+    //         const addedProduct = booksOnSale.find(product => product.id === id);
+    //         // console.log(addedProduct);
+    //         if (addedProduct) {
+    //             const quantity = storedCart[id];
+    //             addedProduct.quantity = quantity;
+    //             savedCart.push(addedProduct)
+    //             console.log(addedProduct);
 
-            }
-        }
-        setCart(savedCart);
-    }, [booksOnSale]);
+    //         }
+    //     }
+    //     setCart(savedCart);
+    // }, [booksOnSale]);
 
     const handleAddtoClick = (bookOnSale) => {
 
 
-
-        const newCart = [...cart, bookOnSale];
-        setCart(newCart);
+        console.log(bookOnSale);
+        // const newCart = [...cart, bookOnSale];
+        // setCart(newCart);
 
         // console.log(cart);
 
-        addToDb(bookOnSale.id)
+        fetch('http://localhost:5000/cart', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bookOnSale)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+            })
+
+
+
     }
+
 
     //jubairClose//
 
@@ -70,15 +87,9 @@ const BooksOnsale = () => {
 
         <section className=' '>
 
-            <div className='cart'>
-                <Cart clearCart={clearCart} cart={cart}>
-                    <Link to="/cartcalculation">
-                        <button>review</button>
-                    </Link>
-                </Cart>
-            </div>
 
-           
+
+
 
 
 
@@ -121,7 +132,7 @@ const BooksOnsale = () => {
                                     <button
                                         onClick={() => handleAddtoClick(bookOnSale)}
 
-                                        className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
+                                        className='btn btn-secondary px-12'><Link to="/cartMongo">Buy Now</Link>
                                     </button>
                                     <button onClick={() => handleCheckOut(bookOnSale.id)} className='btn btn-info ml-5'>Details</button>
                                 </div>

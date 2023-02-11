@@ -1,30 +1,27 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiFillFacebook, AiFillTwitterSquare, AiOutlineMail, AiOutlineWhatsApp } from 'react-icons/ai';
-
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import useServiceDetail from '../../Hooks/FeatureDetailsHook';
-import { addToDb, deleteShoppingCart, getStoredCart } from '../../utilitis/fakedb';
+import { Link, useParams } from 'react-router-dom';
+import RecomandDetailsHook from '../../Hooks/RecomandDetailsHook';
+import { addToDb, getStoredCart } from '../../utilitis/fakedb';
 import HeaderItems from '../Home/Header/HeaderItems/HeaderItems';
 import UseBooksOnSale from '../UseBooksOnSale/UseBooksOnSale';
-import Card from './Card';
-import './FeatureDetails.css'
-import Review from './Review';
+import CardDetails from './CardDetails';
+import ReviewDetails from './ReviewDetails';
 
-
-const FeatureDetails = () => {
+const RecomandDetails = () => {
     const { id } = useParams();
-    const [service] = useServiceDetail(id);
+    const [service] = RecomandDetailsHook(id);
 
     const { booksOnSale } = UseBooksOnSale();
     console.log(booksOnSale);
 
     const [active, setActive] = useState("FirstCard")
 
-    ////////////add to cart///////////
-
+    /////////add to cart/////////////////
+    const { recommendedBooks } = UseBooksOnSale();
 
     const [cart, setCart] = useState([]);
+
 
     //jubair//
     // const navigate = useNavigate()
@@ -32,7 +29,7 @@ const FeatureDetails = () => {
         const storedCart = getStoredCart();
         const savedCart = [];
         for (const id in storedCart) {
-            const addedProduct = booksOnSale.find(product => product.id === id);
+            const addedProduct = recommendedBooks.find(product => product.id === id);
             // console.log(addedProduct);
             if (addedProduct) {
                 const quantity = storedCart[id];
@@ -43,23 +40,21 @@ const FeatureDetails = () => {
             }
         }
         setCart(savedCart);
-    }, [booksOnSale]);
+    }, [recommendedBooks]);
 
-    const handleAddtoClick = (bookOnSale) => {
+    const handleAddtoClick = (recommendedBooks) => {
 
 
 
-        const newCart = [...cart, bookOnSale];
+        const newCart = [...cart, recommendedBooks];
         setCart(newCart);
 
         // console.log(cart);
 
-        addToDb(bookOnSale.id)
+        addToDb(recommendedBooks.id)
     }
 
-    //jubairClose//
-
-    ////////////add to cart close///////////
+    /////////add to end/////////////////
     return (
         <div>
             <HeaderItems></HeaderItems>
@@ -125,8 +120,8 @@ const FeatureDetails = () => {
                                 className="btn">Customer Review</button>
                         </div>
                         <div className='w-10/12 align-middle container mx-auto mt-10 '>
-                            {active === "FirstCard" && <Card bookOnSale={bookOnSale} booksOnSale={booksOnSale}></Card>}
-                            {active === "SecundCard" && <Review bookOnSale={bookOnSale}></Review>}
+                            {active === "FirstCard" && <CardDetails bookOnSale={bookOnSale} booksOnSale={booksOnSale}></CardDetails>}
+                            {active === "SecundCard" && <ReviewDetails bookOnSale={bookOnSale}></ReviewDetails>}
                         </div>
                         <div>
 
@@ -142,4 +137,4 @@ const FeatureDetails = () => {
     );
 };
 
-export default FeatureDetails;
+export default RecomandDetails;
