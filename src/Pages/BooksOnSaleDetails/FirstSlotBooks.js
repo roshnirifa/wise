@@ -1,14 +1,9 @@
 import React from 'react';
 
-import './FeatureDetails.css'
-
-const Card = ({ bookOnSale }) => {
-
-
+const FirstSlotBooks = ({ bookOnSale }) => {
     return (
-        <div className='grid gap-10 grid-cols-2'>
-
-            <div className='border-2 grid grid-cols-2 border-b-2 rounded'>
+        <div className='w-10/12 align-middle container mx-auto mt-10'>
+            <div className='border-2 grid grid-cols-2 border-b-2 rounded '>
 
 
                 <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>Book Title</h1></div>
@@ -29,31 +24,8 @@ const Card = ({ bookOnSale }) => {
                 <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>323</h1></div>
 
             </div>
-
-            <div className='border-2 rounded bg-slate-200'>
-                <h1 className='text-2xl font-bold text-center p-5'>Your Review </h1>
-                <div className='grid grid-cols-2 gap-3'>
-
-                    <div className='p-5'>
-                        <input type="text" placeholder="Author" className="input input-bordered input-info w-full max-w-xs" />
-                    </div>
-                    <div className='p-5'>
-                        <input type="text" placeholder="Email" className="input input-bordered input-info w-full max-w-xs" />
-                    </div>
-                </div>
-                <div className='p-5'>
-                    <textarea placeholder="Bio" className="textarea border-solid border-2 border-indigo-600 textarea-lg w-full  h-50" >Type Here</textarea>
-                </div>
-                <div className='p-10'>
-                    <button className="btn btn-primary ml-10">Submit</button>
-
-                </div>
-            </div>
         </div>
-
-
     );
 };
 
-export default Card;
-
+export default FirstSlotBooks;

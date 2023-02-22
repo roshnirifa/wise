@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useServiceDetail = id => {
+const BooksOnSaleDetails = id => {
     const [service, setService] = useState([]);
     useEffect(() => {
         const url = `http://localhost:5000/product/${id}`;
@@ -11,4 +11,4 @@ const useServiceDetail = id => {
     }, [id]);
     return [service]
 }
-export default useServiceDetail;
+export default BooksOnSaleDetails;

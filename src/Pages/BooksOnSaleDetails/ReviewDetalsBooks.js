@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import RecomandReviewHook from '../../Hooks/RecomandReviewHook';
 
-const ReviewDetails = () => {
+const ReviewDetailsBooks = () => {
     const { id } = useParams();
     const [service] = RecomandReviewHook(id);
     console.log(service);
@@ -31,4 +31,4 @@ const ReviewDetails = () => {
     );
 };
 
-export default ReviewDetails;
+export default ReviewDetailsBooks;

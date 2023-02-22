@@ -1,60 +1,22 @@
-import React, { useEffect, useState } from 'react';
+
+import { useState } from 'react';
 import { AiFillFacebook, AiFillTwitterSquare, AiOutlineMail, AiOutlineWhatsApp } from 'react-icons/ai';
 import { Link, useParams } from 'react-router-dom';
 import RecomandDetailsHook from '../../Hooks/RecomandDetailsHook';
-import { addToDb, getStoredCart } from '../../utilitis/fakedb';
+
 import HeaderItems from '../Home/Header/HeaderItems/HeaderItems';
-import UseBooksOnSale from '../UseBooksOnSale/UseBooksOnSale';
-import CardDetails from './CardDetails';
-import ReviewDetails from './ReviewDetails';
+import FirstSlot from './FirstSlot';
+
+
+import Review from './Review';
+
+
 
 const RecomandDetails = () => {
     const { id } = useParams();
     const [service] = RecomandDetailsHook(id);
-
-    const { booksOnSale } = UseBooksOnSale();
-    console.log(booksOnSale);
-
     const [active, setActive] = useState("FirstCard")
 
-    /////////add to cart/////////////////
-    const { recommendedBooks } = UseBooksOnSale();
-
-    const [cart, setCart] = useState([]);
-
-
-    //jubair//
-    // const navigate = useNavigate()
-    useEffect(() => {
-        const storedCart = getStoredCart();
-        const savedCart = [];
-        for (const id in storedCart) {
-            const addedProduct = recommendedBooks.find(product => product.id === id);
-            // console.log(addedProduct);
-            if (addedProduct) {
-                const quantity = storedCart[id];
-                addedProduct.quantity = quantity;
-                savedCart.push(addedProduct)
-                console.log(addedProduct);
-
-            }
-        }
-        setCart(savedCart);
-    }, [recommendedBooks]);
-
-    const handleAddtoClick = (recommendedBooks) => {
-
-
-
-        const newCart = [...cart, recommendedBooks];
-        setCart(newCart);
-
-        // console.log(cart);
-
-        addToDb(recommendedBooks.id)
-    }
-
-    /////////add to end/////////////////
     return (
         <div>
             <HeaderItems></HeaderItems>
@@ -98,7 +60,7 @@ const RecomandDetails = () => {
 
 
                                         <button
-                                            onClick={() => handleAddtoClick(bookOnSale)}
+
 
                                             className='btn btn-primary ml-10'>
                                             <Link to="/cartcalculation">Buy Now</Link>
@@ -110,22 +72,19 @@ const RecomandDetails = () => {
                             </div>
 
                         </div>
-                        <div className="btn-group w-10/12 align-middle container mx-auto mt-10 ">
-                            <button
-                                onClick={() => setActive("FirstCard")}
-                                className="btn btn-active">Product Details</button>
+                        <div className='w-10/12 align-middle container mx-auto mt-10'>
+                            <div className="btn-group">
+                                <button onClick={() => setActive("FirstCard")} className="btn btn-active">Product Details</button>
+                                <button onClick={() => setActive("SecoundCard")} className="btn">
+                                    Others Review
+                                </button>
 
-                            <button
-                                onClick={() => setActive("SecundCard")}
-                                className="btn">Customer Review</button>
+                            </div>
+                            {active === "FirstCard" && <FirstSlot bookOnSale={bookOnSale} title="1" />}
+                            {active === "SecoundCard" && <Review bookOnSale={bookOnSale} title="2"></Review>}
                         </div>
-                        <div className='w-10/12 align-middle container mx-auto mt-10 '>
-                            {active === "FirstCard" && <CardDetails bookOnSale={bookOnSale} booksOnSale={booksOnSale}></CardDetails>}
-                            {active === "SecundCard" && <ReviewDetails bookOnSale={bookOnSale}></ReviewDetails>}
-                        </div>
-                        <div>
 
-                        </div>
+
                     </div>
 
 
