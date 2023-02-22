@@ -5,47 +5,64 @@ import './BooksOnSale.css'
 
 // Import Swiper styles
 
-
-
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebaseInit';
+
 const BooksOnsale = () => {
     const { booksOnSale } = UseBooksOnSale();
-    return (
-        <section className=' '>
-            <div className='flex justify-between	'>
-                <h1 className='text-4xl text-secondary font-bold ml-24 pt-8 '>Books On Sale</h1>
+    const [user] = useAuthState(auth);
+    console.log(user);
+    const navigate = useNavigate()
+    const handleCheckOut = (id) => {
+        navigate(`/booksOnSaleDetails/${id}`)
+    }
 
-                <div lassName='  '>
-                    <div className="grid grid-flow-col gap-5 text-center auto-cols-max mr-24 mt-3">
-                        <div className="flex flex-col p-2 bg-primary rounded-box text-neutral-content">
-                            <span className="countdown font-mono text-5xl">
-                                <span style={{ "--value": 15 }}></span>
-                            </span>
-                            days
-                        </div>
-                        <div className="flex flex-col p-2 bg-primary rounded-box text-neutral-content">
-                            <span className="countdown font-mono text-5xl">
-                                <span style={{ "--value": 10 }}></span>
-                            </span>
-                            hours
-                        </div>
-                        <div className="flex flex-col p-2 bg-primary rounded-box text-neutral-content">
-                            <span className="countdown font-mono text-5xl">
-                                <span style={{ "--value": 24 }}></span>
-                            </span>
-                            min
-                        </div>
-                        <div className="flex flex-col p-2 bg-primary rounded-box text-neutral-content">
-                            <span className="countdown font-mono text-5xl">
-                                <span style={{ "--value": 40 }}></span>
-                            </span>
-                            sec
-                        </div>
-                    </div>
-                </div>
-            </div>
+    const handleAddtoClick = (bookOnSale) => {
+
+
+        console.log(bookOnSale);
+
+
+        const img = bookOnSale.img
+        const name = bookOnSale.name;
+        const price = bookOnSale.price;
+        const subQuantity = bookOnSale.subQuantity;
+        const email = user?.email;
+
+        const booking = {
+            img: img,
+            price: price,
+            name: name,
+            subQuantity: subQuantity,
+            email: email
+        }
+
+        fetch('http://localhost:5000/cart', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+            })
+
+    }
+
+    return (
+
+        <section>
 
             <div className='container mx-auto px-5 '>
+                <div>
+                    <h1 className='text-4xl font-bold text-center title pt-9'>Books On Sale</h1>
+
+                </div>
                 <Swiper
                     effect={"coverflow"}
                     grabCursor={true}
@@ -75,13 +92,18 @@ const BooksOnsale = () => {
 
                                 <div className='flex justify-center'>
 
-                                    <h3 className='text-center text-xl text-primary font-bold mr-5'>{bookOnSale.price}</h3>
+                                    <h3 className='text-center text-xl text-primary font-bold mr-5'>${bookOnSale.price}</h3>
                                     <h3 className='text-center text-xl previousPrice font-bold'><del>{bookOnSale.previousPrice}</del></h3>
 
                                 </div>
 
                                 <div className='mt-2'>
-                                    <button className='btn btn-secondary px-12'>Buy Now</button>
+                                    <button
+                                        onClick={() => handleAddtoClick(bookOnSale)}
+
+                                        className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
+                                    </button>
+                                    <button onClick={() => handleCheckOut(bookOnSale.id)} className='btn btn-info ml-5'>Details</button>
                                 </div>
 
 
@@ -94,7 +116,7 @@ const BooksOnsale = () => {
 
             </div>
 
-        </section>
+        </section >
     );
 };
 

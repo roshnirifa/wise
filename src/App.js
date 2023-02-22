@@ -9,6 +9,15 @@ import Login from './Pages/Home/Login/Login';
 import Register from './Pages/Home/Register/Register';
 import UserProfile from './Pages/UserProfile/UserProfile';
 import { ToastContainer } from 'react-toastify';
+import CartCalculation from './Pages/Home/CartCalculation/CartCalculation';
+
+
+
+import RecomandDetails from './Pages/RecomandDetails/RecomandDetails';
+
+import Test from './Pages/Home/CartCalculation/Test';
+
+import BooksDetails from './Pages/BooksOnSaleDetails/BooksDetails';
 
 function App() {
   return (
@@ -21,6 +30,11 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/userProfile' element={<UserProfile></UserProfile>}></Route>
+        <Route path='/cartcalculation' element={<CartCalculation></CartCalculation>}></Route>
+        <Route path='/cartMongo' element={<Test></Test>}></Route>
+
+        <Route path='/booksOnSaleDetails/:id' element={<BooksDetails></BooksDetails>}></Route>
+        <Route path='/recomandDetails/:id' element={<RecomandDetails></RecomandDetails>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
 
       </Routes>
