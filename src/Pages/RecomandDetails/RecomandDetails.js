@@ -1,24 +1,22 @@
-import React from 'react';
+
 import { useState } from 'react';
 import { AiFillFacebook, AiFillTwitterSquare, AiOutlineMail, AiOutlineWhatsApp } from 'react-icons/ai';
+import { Link, useParams } from 'react-router-dom';
+import RecomandDetailsHook from '../../Hooks/RecomandDetailsHook';
 
-import { useParams } from 'react-router-dom';
-import useServiceDetail from '../../Hooks/FeatureDetailsHook';
 import HeaderItems from '../Home/Header/HeaderItems/HeaderItems';
-import UseBooksOnSale from '../UseBooksOnSale/UseBooksOnSale';
-import Card from './Card';
-import './FeatureDetails.css'
+import FirstSlot from './FirstSlot';
+
+
 import Review from './Review';
 
 
-const FeatureDetails = () => {
+
+const RecomandDetails = () => {
     const { id } = useParams();
-    const [service] = useServiceDetail(id);
-
-    const { booksOnSale } = UseBooksOnSale();
-    console.log(booksOnSale);
-
+    const [service] = RecomandDetailsHook(id);
     const [active, setActive] = useState("FirstCard")
+
     return (
         <div>
             <HeaderItems></HeaderItems>
@@ -59,7 +57,14 @@ const FeatureDetails = () => {
                                     <p className="py-6 m-4">{bookOnSale.description}</p>
                                     <div className='flex'>
                                         <h1 className='ml-5 text-4xl font-bold'>${bookOnSale.price}</h1>
-                                        <button className="btn btn-primary ml-10">Add To Cart</button>
+
+
+                                        <button
+
+
+                                            className='btn btn-primary ml-10'>
+                                            <Link to="/cartcalculation">Buy Now</Link>
+                                        </button>
 
 
                                     </div>
@@ -67,22 +72,19 @@ const FeatureDetails = () => {
                             </div>
 
                         </div>
-                        <div className="btn-group w-10/12 align-middle container mx-auto mt-10 ">
-                            <button
-                                onClick={() => setActive("FirstCard")}
-                                className="btn btn-active">Product Details</button>
+                        <div className='w-10/12 align-middle container mx-auto mt-10'>
+                            <div className="btn-group">
+                                <button onClick={() => setActive("FirstCard")} className="btn btn-active">Product Details</button>
+                                <button onClick={() => setActive("SecoundCard")} className="btn">
+                                    Others Review
+                                </button>
 
-                            <button
-                                onClick={() => setActive("SecundCard")}
-                                className="btn">Customer Review</button>
+                            </div>
+                            {active === "FirstCard" && <FirstSlot bookOnSale={bookOnSale} title="1" />}
+                            {active === "SecoundCard" && <Review bookOnSale={bookOnSale} title="2"></Review>}
                         </div>
-                        <div className='w-10/12 align-middle container mx-auto mt-10 '>
-                            {active === "FirstCard" && <Card bookOnSale={bookOnSale} booksOnSale={booksOnSale}></Card>}
-                            {active === "SecundCard" && <Review bookOnSale={bookOnSale}></Review>}
-                        </div>
-                        <div>
 
-                        </div>
+
                     </div>
 
 
@@ -94,4 +96,4 @@ const FeatureDetails = () => {
     );
 };
 
-export default FeatureDetails;
+export default RecomandDetails;

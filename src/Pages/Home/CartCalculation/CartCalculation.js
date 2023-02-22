@@ -11,17 +11,42 @@ import { AiTwotoneThunderbolt, AiFillLike, MdNavigateNext, AiOutlineMinus } from
 import { useEffect } from 'react';
 import CartTotal from './CartTotal';
 import { BsPlusLg } from 'react-icons/bs';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebaseInit';
 
 
 const CartCalculation = () => {
-    const { initialCart } = UseBooksOnSale();
+    const [user] = useAuthState(auth);
 
-    const [cart, setCart] = useState(initialCart)
-    const handleRemoveItem = (id) => {
-        const remaining = cart.filter(product => product.id !== id)
-        console.log(remaining);
-        setCart(remaining);
-        removeFromDb(id)
+    const [booksOnSaleData, setbooksOnSaleData] = useState([]);
+
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/cart?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setbooksOnSaleData(data))
+    }, [user])
+
+
+
+    const handleRemoveItem = id => {
+        const proceed = window.confirm('Are you sure, you want to cancel this order');
+        if (proceed) {
+            fetch(`http://localhost:5000/cart/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('deleted successfully');
+                        const remaining = booksOnSaleData.filter(odr => odr._id !== id);
+                        setbooksOnSaleData(remaining);
+                    }
+
+                })
+        }
     }
 
     return (
@@ -77,7 +102,7 @@ const CartCalculation = () => {
 
                     </table>
                 </div>
-                <CartTotal initialCart={initialCart} handleRemoveItem={handleRemoveItem}></CartTotal>
+                <CartTotal booksOnSaleData={booksOnSaleData} handleRemoveItem={handleRemoveItem}></CartTotal>
 
             </div>
         </div>

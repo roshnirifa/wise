@@ -5,84 +5,64 @@ import './BooksOnSale.css'
 
 // Import Swiper styles
 
-
-
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
-import { useState } from 'react';
-import CartCalculation from '../CartCalculation/CartCalculation';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import Cart from './Cart';
-import { addToDb, deleteShoppingCart, getStoredCart } from '../../../utilitis/fakedb';
-import { useEffect } from 'react';
-
-
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebaseInit';
 
 const BooksOnsale = () => {
     const { booksOnSale } = UseBooksOnSale();
-
-    const [cart, setCart] = useState([]);
-
-    const clearCart = () => {
-        setCart([]);
-        deleteShoppingCart()
-    }
-
+    const [user] = useAuthState(auth);
+    console.log(user);
     const navigate = useNavigate()
     const handleCheckOut = (id) => {
-        navigate(/featureDetails/${id})
+        navigate(`/booksOnSaleDetails/${id}`)
     }
-
-
-    //jubair//
-    // const navigate = useNavigate()
-    useEffect(() => {
-        const storedCart = getStoredCart();
-        const savedCart = [];
-        for (const id in storedCart) {
-            const addedProduct = booksOnSale.find(product => product.id === id);
-            // console.log(addedProduct);
-            if (addedProduct) {
-                const quantity = storedCart[id];
-                addedProduct.quantity = quantity;
-                savedCart.push(addedProduct)
-                console.log(addedProduct);
-
-            }
-        }
-        setCart(savedCart);
-    }, [booksOnSale]);
 
     const handleAddtoClick = (bookOnSale) => {
 
 
+        console.log(bookOnSale);
 
-        const newCart = [...cart, bookOnSale];
-        setCart(newCart);
 
-        // console.log(cart);
+        const img = bookOnSale.img
+        const name = bookOnSale.name;
+        const price = bookOnSale.price;
+        const subQuantity = bookOnSale.subQuantity;
+        const email = user?.email;
 
-        addToDb(bookOnSale.id)
+        const booking = {
+            img: img,
+            price: price,
+            name: name,
+            subQuantity: subQuantity,
+            email: email
+        }
+
+        fetch('http://localhost:5000/cart', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+            })
+
     }
-
-    //jubairClose//
 
     return (
 
-        <section className=' '>
-
-            <div className='cart'>
-                <Cart clearCart={clearCart} cart={cart}>
-                    <Link to="/cartcalculation">
-                        <button>review</button>
-                    </Link>
-                </Cart>
-            </div>
-
-           
-
-
+        <section>
 
             <div className='container mx-auto px-5 '>
+                <div>
+                    <h1 className='text-4xl font-bold text-center title pt-9'>Books On Sale</h1>
+
+                </div>
                 <Swiper
                     effect={"coverflow"}
                     grabCursor={true}
@@ -136,7 +116,7 @@ const BooksOnsale = () => {
 
             </div>
 
-        </section>
+        </section >
     );
 };
 
