@@ -13,7 +13,7 @@ import auth from '../firebaseInit';
 const BooksOnsale = () => {
     const { booksOnSale } = UseBooksOnSale();
     const [user] = useAuthState(auth);
-    console.log(user);
+    // console.log(user);
     const navigate = useNavigate()
     const handleCheckOut = (id) => {
         navigate(`/booksOnSaleDetails/${id}`)

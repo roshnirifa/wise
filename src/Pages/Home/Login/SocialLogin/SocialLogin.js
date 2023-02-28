@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Loading from '../../../Shared/Loading/Loading';
 import { BsGoogle } from "react-icons/bs";
 import auth from '../../firebaseInit';

@@ -1,6 +1,10 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
+import auth from '../../firebaseInit';
 
 const HeaderItems = () => {
+    const [user] = useAuthState(auth);
     return (
         <div class="navbar bg-base-100 container">
             <div class="navbar-start">
@@ -34,6 +38,9 @@ const HeaderItems = () => {
 
 
                         <li><a>Instructors</a></li>
+                        {
+                            user && <li><Link to='/dashboard'>Dashboard</Link></li>
+                        }
                         <li><a>Blogs</a></li>
                         <li><a>Contact</a></li>
                     </ul>
@@ -66,6 +73,9 @@ const HeaderItems = () => {
                     </li>
 
                     <li><a>Instructors</a></li>
+                    {
+                        user && <li><Link to='/dashboard'>Dashboard</Link></li>
+                    }
                     <li><a>Blogs</a></li>
                     <li><a>Contact</a></li>
                 </ul>
