@@ -26,10 +26,10 @@ const UseBooksOnSale = () => {
 
     const savedCart = getStoredCart();
     const initialCart = []
-    console.log('savedCart', savedCart);
+    // console.log('savedCart', savedCart);
     for (const id in savedCart) {
         const addedProduct = booksOnSale.find(product => product.id === id);
-        console.log(id, addedProduct);
+        // console.log(id, addedProduct);
         if (addedProduct) {
             const quantity = savedCart[id];
             addedProduct.quantity = quantity;
@@ -39,7 +39,7 @@ const UseBooksOnSale = () => {
 
     for (const id in savedCart) {
         const addedProduct = recommendedBooks.find(product => product.id === id);
-        console.log(id, addedProduct);
+        // console.log(id, addedProduct);
         if (addedProduct) {
             const quantity = savedCart[id];
             addedProduct.quantity = quantity;
