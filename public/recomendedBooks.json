@@ -2,7 +2,7 @@
     {
         "id": "11",
         "name": "Terrible",
-        "price": 500,
+        "price": 700,
         "quantity": "10",
         "subQuantity": 1,
         "writter": "Kevin Smiley",
@@ -14,7 +14,7 @@
     {
         "id": "12",
         "name": "A Heavy Lift",
-        "price": 500,
+        "price": 300,
         "quantity": "10",
         "subQuantity": 1,
         "writter": "Kevin Smiley",
@@ -26,7 +26,7 @@
     {
         "id": "13",
         "name": "Take Tango",
-        "price": 500,
+        "price": 600,
         "quantity": "10",
         "subQuantity": 1,
         "writter": "Kevin Smiley",
@@ -38,7 +38,7 @@
     {
         "id": "14",
         "name": "Thunder Stunt",
-        "price": 500,
+        "price": 800,
         "quantity": "10",
         "subQuantity": 1,
         "writter": "Kevin Smiley",
@@ -50,7 +50,7 @@
     {
         "id": "15",
         "name": "Cat Adverture",
-        "price": 500,
+        "price": 100,
         "quantity": "10",
         "subQuantity": 1,
         "writter": "Kevin Smiley",
@@ -62,7 +62,7 @@
     {
         "id": "16",
         "name": "Home",
-        "price": 500,
+        "price": 800,
         "quantity": "10",
         "subQuantity": 1,
         "writter": "Kevin Smiley",
@@ -74,7 +74,7 @@
     {
         "id": "17",
         "name": "The Missadventure",
-        "price": 500,
+        "price": 900,
         "quantity": "10",
         "subQuantity": 1,
         "writter": "Kevin Smiley",
@@ -98,7 +98,7 @@
     {
         "id": "19",
         "name": "All Good News",
-        "price": 500,
+        "price": 200,
         "quantity": "10",
         "subQuantity": 1,
         "writter": "Kevin Smiley",
@@ -110,7 +110,7 @@
     {
         "id": "20",
         "name": "Seconds",
-        "price": 500,
+        "price": 800,
         "quantity": "10",
         "subQuantity": 1,
         "writter": "Kevin Smiley",
@@ -122,7 +122,7 @@
     {
         "id": "21",
         "name": "Real Life",
-        "price": 500,
+        "price": 900,
         "quantity": "10",
         "subQuantity": 1,
         "writter": "Kevin Smiley",

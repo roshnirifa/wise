@@ -14,6 +14,8 @@
 * React Toastify
 * swiperjs (for animation and slide)
 * React Icon
+* React Query
+
 
 
 

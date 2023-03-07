@@ -13,7 +13,7 @@ import CartCalculation from './Pages/Home/CartCalculation/CartCalculation';
 
 
 
-import RecomandDetails from './Pages/RecomandDetails/RecomandDetails';
+
 
 // import Test from './Pages/Home/CartCalculation/Test';
 
@@ -22,6 +22,10 @@ import Footer from './Pages/Footer/Footer';
 import RequireAuth from './Pages/Home/Login/RequireAuth/RequireAuth';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import AllUsers from './Pages/Dashboard/AllUsers/AllUsers';
+import RequireAdmin from './Pages/Home/Login/RequireAdmin/RequireAdmin';
+import AddBooks from './Pages/Dashboard/AddBooks/AddBooks';
+import ManageBook from './Pages/Dashboard/ManageBook/ManageBook';
+import RecomandDetails from './Pages/Home/RecomendedBooks/RecomandDetails/RecomandDetails';
 
 function App() {
   return (
@@ -50,6 +54,9 @@ function App() {
           </RequireAuth>
         }></Route>
 
+
+
+
         <Route path='/recomandDetails/:id' element={
           <RequireAuth>
             <RecomandDetails></RecomandDetails>
@@ -60,19 +67,29 @@ function App() {
             <Dashboard></Dashboard>
           </RequireAuth>
         }>
-          {/* <Route index element={<MyOrder></MyOrder>}></Route> */}
+
 
           <Route path='userProfile' element={<UserProfile></UserProfile>}></Route>
           <Route path='cartcalculation' element={<CartCalculation></CartCalculation>}></Route>
-          <Route path='allUsers' element={<AllUsers></AllUsers>}></Route>
 
-
-          {/* <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
-          <Route path='manageProduct' element={<ManageProduct></ManageProduct>}></Route>
-          <Route path='allUsers' element={<RequrireAdmin>
+          <Route path='allUsers' element={<RequireAdmin>
             <AllUsers></AllUsers>
-          </RequrireAdmin>}></Route> */}
+          </RequireAdmin>}></Route>
+
+          <Route path='addBooks' element={<RequireAdmin>
+            <AddBooks></AddBooks>
+          </RequireAdmin>}></Route>
+
+          <Route path='manageBook' element={<RequireAdmin>
+            <ManageBook></ManageBook>
+          </RequireAdmin>}></Route>
+
         </Route>
+
+
+        {/* <Route path='manageProduct' element={<ManageProduct></ManageProduct>}></Route> */}
+
+
 
 
 

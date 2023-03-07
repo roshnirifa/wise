@@ -1,16 +1,14 @@
 import React from 'react';
-import RecomandDetails from '../RecomandDetails/RecomandDetails';
+
 import Banner from './Banner/Banner';
 import BooksOnsale from './BooksOnSale/BooksOnsale';
-import Cart from './BooksOnSale/Cart';
-import CartCalculation from './CartCalculation/CartCalculation';
-import CartTotal from './CartCalculation/CartTotal';
+
 
 
 import HeaderItems from './Header/HeaderItems/HeaderItems';
 import OurService from './OurService/OurService';
 import RecomendedBooks from './RecomendedBooks/RecomendedBooks';
-import Testimonial from './Testimonial/Testimonial';
+
 import Testimonials from './Testimonials/Testimonials';
 
 

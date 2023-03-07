@@ -1,18 +1,18 @@
-import { clear } from '@testing-library/user-event/dist/clear';
+
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import auth from '../Home/firebaseInit';
-import Loading from '../Shared/Loading/Loading';
+import auth from '../../firebaseInit';
+
 import ReviewDetails from './ReviewDetails';
 
-const Review = ({ bookOnSale }) => {
+const Review = ({ bookDetails }) => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate()
 
 
     const handlePlaceOrder = event => {
-        navigate(`/recomandDetails/${bookOnSale.id}`)
+        navigate(`/recomandDetails/${bookDetails.id}`)
         event.preventDefault();
         const form = event.target;
         const name = `${form.firstName.value} ${form.lastName.value}`;
@@ -20,7 +20,7 @@ const Review = ({ bookOnSale }) => {
 
 
         const message = form.message.value;
-        const id = bookOnSale.id
+        const id = bookDetails.id
 
         const order = {
             customer: name,

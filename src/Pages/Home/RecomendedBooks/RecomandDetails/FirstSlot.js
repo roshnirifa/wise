@@ -3,7 +3,7 @@ import React from 'react';
 const FirstSlot = ({ bookOnSale }) => {
     return (
         <div>
-            <div className='w-10/12 align-middle container mx-auto mt-10'>
+            <div className='w-10/12 align-middle container mx-auto my-10 '>
 
                 <div className='border-2 grid grid-cols-2 border-b-2 rounded'>
 

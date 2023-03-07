@@ -7,16 +7,18 @@ const UseBooksOnSale = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/product')
+        fetch('http://localhost:5000/booksOnSale')
             .then(res => res.json())
             .then(data => setbooksOnSale(data))
     }, [])
+
+
 
     const [recommendedBooks, setRecommendedBooks] = useState([]);
 
 
     useEffect(() => {
-        fetch('recomendedBooks.json')
+        fetch('http://localhost:5000/recomandBooks')
             .then(res => res.json())
             .then(data => setRecommendedBooks(data))
     }, [])

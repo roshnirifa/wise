@@ -2,7 +2,7 @@ import React from 'react';
 
 const FirstSlotBooks = ({ bookOnSale }) => {
     return (
-        <div className='w-10/12 align-middle container mx-auto mt-10'>
+        <div className='w-10/12 align-middle container mx-auto mt-10 pb-12'>
             <div className='border-2 grid grid-cols-2 border-b-2 rounded '>
 
 

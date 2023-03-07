@@ -1,18 +1,17 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { AiFillFacebook, AiFillTwitterSquare, AiOutlineMail, AiOutlineWhatsApp } from 'react-icons/ai';
 import { Link, useParams } from 'react-router-dom';
-import RecomandDetailsHook from '../../Hooks/RecomandDetailsHook';
-
-import HeaderItems from '../Home/Header/HeaderItems/HeaderItems';
+import RecomandDetailsHook from '../../../../Hooks/RecomandDetailsHook';
+import auth from '../../firebaseInit';
+import HeaderItems from '../../Header/HeaderItems/HeaderItems';
 import FirstSlot from './FirstSlot';
-
-
 import Review from './Review';
 
 
-
 const RecomandDetails = () => {
+
     const { id } = useParams();
     const [service] = RecomandDetailsHook(id);
     const [active, setActive] = useState("FirstCard")
