@@ -27,6 +27,10 @@ import AddBooks from './Pages/Dashboard/AddBooks/AddBooks';
 import ManageBook from './Pages/Dashboard/ManageBook/ManageBook';
 import RecomandDetails from './Pages/Home/RecomendedBooks/RecomandDetails/RecomandDetails';
 
+import Checkout from './Pages/Home/CartCalculation/Checkout/Checkout';
+import CheckoutForm from './Pages/Home/CartCalculation/CheckoutForm/CheckoutForm';
+
+
 function App() {
   return (
     <div >
@@ -38,6 +42,13 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/userProfile' element={<UserProfile></UserProfile>}></Route>
+
+        <Route path='checkout' element={<Checkout></Checkout>}>
+
+        </Route>
+        <Route path='CheckoutForm' element={<CheckoutForm></CheckoutForm>}>
+
+        </Route>
 
 
         <Route path='/cartcalculation' element={
@@ -61,7 +72,11 @@ function App() {
           <RequireAuth>
             <RecomandDetails></RecomandDetails>
           </RequireAuth>
-        }></Route>
+        }>
+
+        </Route>
+
+
         <Route path='/dashboard' element={
           <RequireAuth>
             <Dashboard></Dashboard>
@@ -70,6 +85,7 @@ function App() {
 
 
           <Route path='userProfile' element={<UserProfile></UserProfile>}></Route>
+
           <Route path='cartcalculation' element={<CartCalculation></CartCalculation>}></Route>
 
           <Route path='allUsers' element={<RequireAdmin>
