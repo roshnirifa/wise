@@ -14,6 +14,7 @@ const RecomandDetails = () => {
 
     const { id } = useParams();
     const [service] = RecomandDetailsHook(id);
+    console.log(service);
     const [active, setActive] = useState("FirstCard")
 
     return (

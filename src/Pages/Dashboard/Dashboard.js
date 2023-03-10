@@ -23,8 +23,11 @@ const Dashboard = () => {
                     <li><Link to='/dashboard/cartcalculation'>My Orders</Link>
 
                     </li>
+                    {/* <li><Link to='/dashboard'>My Orders</Link></li> */}
 
-                    <li><Link to='/dashboard/userProfile'>My Profile</Link></li>
+                    {/* <li><Link to='/dashboard/userProfile'>My Profile</Link></li> */}
+
+                    {admin && <li><Link to='/dashboard/userProfile'> My Profile</Link></li>}
                     {admin && <li><Link to='/dashboard/allUsers'>All Users</Link></li>}
                     {admin && <li><Link to='/dashboard/addBooks'>Add Product</Link></li>}
                     {admin && <li><Link to='/dashboard/manageBook'>Manage Books</Link></li>}

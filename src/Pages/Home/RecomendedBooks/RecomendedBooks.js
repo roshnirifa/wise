@@ -111,7 +111,7 @@ const RecomendedBooks = () => {
 
                                         className='btn btn-secondary px-12'><Link to="/cartcalculation">Buy Now</Link>
                                     </button>
-                                    <button onClick={() => handleDetails(recommendedBooks.id)} className='btn btn-info ml-5'>Details</button>
+                                    <button onClick={() => handleDetails(recommendedBooks._id)} className='btn btn-info ml-5'>Details</button>
                                 </div>
 
 

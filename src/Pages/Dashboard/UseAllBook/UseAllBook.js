@@ -14,6 +14,7 @@ const UseAllBook = ({ book }) => {
                     // console.log(data);
                     if (data.deletedCount > 0) {
                         alert('deleted successfully');
+                        window.location.reload();
 
                     }
 

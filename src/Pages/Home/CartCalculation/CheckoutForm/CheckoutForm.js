@@ -38,7 +38,7 @@ const CheckoutForm = () => {
     }
 
     return (
-        <div className='border p-3 text-center'>
+        <div className='border p-3 text-center mb-5'>
             <form onSubmit={handleSubmit}>
                 <CardElement
                     options={{
@@ -58,7 +58,7 @@ const CheckoutForm = () => {
                 />
                 <div className='text-center'>
                     <button type="submit" className=' btn btn-primary w-1/2 mt-12' disabled={!stripe}>
-                        Pay
+                        Proceed to Checkout
                     </button>
                 </div>
             </form>
