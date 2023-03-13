@@ -28,6 +28,7 @@ import ManageBook from './Pages/Dashboard/ManageBook/ManageBook';
 import RecomandDetails from './Pages/Home/RecomendedBooks/RecomandDetails/RecomandDetails';
 
 import CheckoutForm from './Pages/Home/CartCalculation/CheckoutForm/CheckoutForm';
+import Checkout from './Pages/Home/CartCalculation/CheckOut/CheckOut';
 
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/userProfile' element={<UserProfile></UserProfile>}></Route>
 
+        <Route path='checkout' element={<Checkout></Checkout>}>
+
+        </Route>
         <Route path='CheckoutForm' element={<CheckoutForm></CheckoutForm>}>
 
         </Route>

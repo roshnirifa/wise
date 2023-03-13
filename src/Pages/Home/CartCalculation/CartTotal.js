@@ -6,11 +6,11 @@ import { BsPlusLg } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 
 import './CartTable.css'
-import CheckoutForm from './CheckoutForm/CheckoutForm';
 
 
 
-const stripePromise = loadStripe('pk_test_51MjExdBidVZOWdMSUOoKInrVq1HZE86QegBCzknkK5BRE0FweNl4H9AHgFajYrIwfic8CdHmk3XYq9ZYf79FY45U00sWDO1oTo');
+
+
 
 const CartTotal = ({ booksOnSaleData, handleRemoveItem }) => {
 
@@ -93,62 +93,46 @@ const CartTotal = ({ booksOnSaleData, handleRemoveItem }) => {
 
 
 
-            <div className='grid gap-10 grid-cols-2 table w-10/12 align-middle container mx-auto mt-10 '>
-                <div className=''>
-                    <h1 className='text-2xl font-bold text-center p-5'>CALCULATE SHIPPING</h1>
-                    <div className='p-5'>
-
-                        <div className='py-5 '>
-                            <input type="text" placeholder="Your Address" className="input input-bordered input-info w-full " />
-                        </div>
-                        <div className='py-5 mb-3 '>
-                            <input type="text" placeholder="Your Phone Number" className="input input-bordered input-info w-full " />
-                        </div>
-                        <Elements stripe={stripePromise}>
-                            <CheckoutForm />
-                        </Elements>
-                    </div>
-                </div>
 
 
-                <div className='mx-auto table w-10/12 my-12'>
-                    <div className='border-b-2 rounded '>
-                        <h1 className='text-2xl font-bold text-center p-5'>CALCULATE TOTAL PRODUCTS</h1>
-                        <div className='border-2 grid grid-cols-2 '>
+            <div className='mx-auto table w-10/12 my-12'>
+                <div className='border-b-2 rounded '>
+                    <h1 className='text-2xl font-bold text-center p-5'>CALCULATE TOTAL PRODUCTS</h1>
+                    <div className='border-2 grid grid-cols-2 '>
 
 
-                            <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>Total Order</h1></div>
-                            <div className='border-b-2'> <h1 className='ml-4 text-xl font-semi-bold p-3'>
-                                $  {
-                                    avg.map(item => item.price * item.subQuantity).reduce((total, value) => total + value, 0)
-                                }
+                        <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>Total Order</h1></div>
+                        <div className='border-b-2'> <h1 className='ml-4 text-xl font-semi-bold p-3'>
+                            $  {
+                                avg.map(item => item.price * item.subQuantity).reduce((total, value) => total + value, 0)
+                            }
 
-                            </h1></div>
-                            <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>Delivery Charge</h1></div>
+                        </h1></div>
+                        <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>Delivery Charge</h1></div>
 
-                            <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>$ 50</h1></div>
-                            <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>TOTAL AMOUNT</h1></div>
+                        <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>$50</h1></div>
+                        <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>TOTAL AMOUNT</h1></div>
 
-                            <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>$ {
-                                avg.map(item => item.price * item.subQuantity + 50).reduce((total, value) => total + value, 0)
-                            }</h1></div>
-
-
-                        </div>
-                        {/* <div className='p-5 text-center'>
-                            <button class="btn btn-primary w-1/2"><Link to="/checkout">Process to Checkout</Link></button>
-
-                        </div> */}
+                        <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>$ {
+                            avg.map(item => item.price * item.subQuantity + 50).reduce((total, value) => total + value, -100)
+                        }</h1></div>
 
 
                     </div>
+                    <div className='p-5 text-center'>
+                        <button class="btn btn-primary w-1/2"><Link to="/checkout">Place Order</Link></button>
+
+                    </div>
+
+
                 </div>
-
-
-
-
             </div>
+
+
+
+
         </div>
+        // </div>
 
     );
 };

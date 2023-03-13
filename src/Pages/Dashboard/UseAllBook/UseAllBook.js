@@ -21,22 +21,6 @@ const UseAllBook = ({ book }) => {
                 })
         }
 
-
-
-        // console.log(id);
-        // fetch(`http://localhost:5000/delete/${id}`, {
-        //     method: 'DELETE',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     }
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         // toast.success('Delete Done');
-        //         return alert(' Delete Done ');
-        //     });
-        // .then(result => alert(' Delete Done'));
     }
 
     return (
