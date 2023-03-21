@@ -27,13 +27,13 @@ const Checkout = () => {
     useEffect(() => {
         setAvg(booksOnSaleData)
     }, [booksOnSaleData])
-    console.log(avg);
+    // console.log(avg);
     return (
         <div className='grid gap-10 grid-cols-2 p-10 '>
             <div className='checkout-container  p-5'>
                 <h1 className='text-xl font-semi-bold ' >Total Amount</h1>
                 <p className='text-3xl font-bold '>$ {
-                    avg.map(item => item.price * item.subQuantity + 50).reduce((total, value) => total + value, -100)
+                    avg.map(item => item.price * item.subQuantity + 50).reduce((total, value) => total + value, 0)
                 }
                 </p>
 
@@ -92,7 +92,7 @@ const Checkout = () => {
             </div>
 
             <Elements stripe={stripePromise}>
-                <CheckoutForm />
+                <CheckoutForm avg={avg} />
             </Elements>
 
 

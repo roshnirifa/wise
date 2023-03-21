@@ -3,16 +3,18 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebaseInit';
+import './review.css'
 
 import ReviewDetails from './ReviewDetails';
 
-const Review = ({ bookDetails }) => {
+const Review = ({ bookOnSale }) => {
     const [user] = useAuthState(auth);
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
+    // console.log(bookOnSale);
 
 
     const handlePlaceOrder = event => {
-        navigate(`/recomandDetails/${bookDetails.id}`)
+        // navigate(`/recomandBooks/${bookOnSale._id}`)
         event.preventDefault();
         const form = event.target;
         const name = `${form.firstName.value} ${form.lastName.value}`;
@@ -20,7 +22,7 @@ const Review = ({ bookDetails }) => {
 
 
         const message = form.message.value;
-        const id = bookDetails.id
+        const id = bookOnSale._id
 
         const order = {
             customer: name,
@@ -44,7 +46,8 @@ const Review = ({ bookDetails }) => {
                 console.log(data);
                 if (data.acknowledged) {
                     alert('review placed successfully')
-                    form.reset();
+                    window.location.reload();
+
 
 
                 }
@@ -53,7 +56,7 @@ const Review = ({ bookDetails }) => {
 
     }
     return (
-        <div className='m-5 bg-info p-5 border-4  w-10/12 align-middle container mx-auto mt-10'>
+        <div className='m-5 review-container p-5 border-4'>
             <h1 className='text-4xl font-bold text-center title pt-5'>Your Review</h1>
             <div className=''>
                 <form onSubmit={handlePlaceOrder}>
@@ -68,9 +71,9 @@ const Review = ({ bookDetails }) => {
 
                     <input className='btn' type="submit" value="Place Your Review" />
                 </form>
+                <h1 className='text-4xl text-center mt-10 font-bold'>Others Review</h1>
+                <ReviewDetails></ReviewDetails>
             </div>
-            <h1 className='text-4xl text-center mt-10 font-bold'>Others Review</h1>
-            <ReviewDetails></ReviewDetails>
         </div>
     );
 };

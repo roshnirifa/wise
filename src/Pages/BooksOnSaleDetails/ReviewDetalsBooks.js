@@ -9,7 +9,7 @@ const ReviewDetailsBooks = () => {
     return (
         <div>
 
-            <div className='m-5 bg-info p-5 border-4 w-10/12 align-middle container mx-auto mt-10  grid gap-2 grid-cols-2'>
+            <div className='m-5 p-5 border-4 w-10/12 align-middle container mx-auto mt-10  grid gap-2 grid-cols-2'>
 
                 {
                     service.map(review =>

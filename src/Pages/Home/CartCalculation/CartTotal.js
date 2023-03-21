@@ -110,11 +110,11 @@ const CartTotal = ({ booksOnSaleData, handleRemoveItem }) => {
                         </h1></div>
                         <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>Delivery Charge</h1></div>
 
-                        <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>$50</h1></div>
+                        <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>$100</h1></div>
                         <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>TOTAL AMOUNT</h1></div>
 
                         <div className='border-b-2'><h1 className='ml-4 text-xl font-semi-bold p-3'>$ {
-                            avg.map(item => item.price * item.subQuantity + 50).reduce((total, value) => total + value, -100)
+                            avg.map(item => item.price * item.subQuantity).reduce((total, value) => total + value, 0)
                         }</h1></div>
 
 

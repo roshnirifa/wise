@@ -4,15 +4,17 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../Home/firebaseInit';
 import ReviewDetailsBooks from './ReviewDetalsBooks';
+import './Review.css'
 
 
 const ReviewForm = ({ bookOnSale }) => {
     const [user] = useAuthState(auth);
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
+    // console.log(bookOnSale);
 
 
     const handlePlaceOrder = event => {
-        navigate(`/booksOnSaleDetails/${bookOnSale.id}`)
+        // navigate(`/recomandBooks/${bookOnSale._id}`)
         event.preventDefault();
         const form = event.target;
         const name = `${form.firstName.value} ${form.lastName.value}`;
@@ -44,7 +46,8 @@ const ReviewForm = ({ bookOnSale }) => {
                 console.log(data);
                 if (data.acknowledged) {
                     alert('review placed successfully')
-                    form.reset();
+                    window.location.reload();
+
 
 
                 }
@@ -53,7 +56,7 @@ const ReviewForm = ({ bookOnSale }) => {
 
     }
     return (
-        <div className='m-5 bg-info p-5 border-4'>
+        <div className='m-5 review-container p-5 border-4'>
             <h1 className='text-4xl font-bold text-center title pt-5'>Your Review</h1>
             <div className=''>
                 <form onSubmit={handlePlaceOrder}>

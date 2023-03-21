@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Loading from '../Pages/Shared/Loading/Loading';
+import { useEffect, useState } from 'react';
 
 const RecomandReviewHook = id => {
     const [service, setService] = useState([]);
@@ -20,6 +19,5 @@ const RecomandReviewHook = id => {
 
 
 };
-
 
 export default RecomandReviewHook;
