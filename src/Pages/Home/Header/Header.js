@@ -38,9 +38,9 @@ const Header = () => {
 
                 </div>
                 <div class="navbar-center">
-                    <div class="form-control  ">
+                    {/* <div class="form-control  ">
                         <input type="text" placeholder="Search" class="input input-bordered px-20" />
-                    </div>
+                    </div> */}
                 </div>
                 <div class="navbar-end">
 

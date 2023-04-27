@@ -24,7 +24,7 @@ const Footer = () => {
                     <a class="link link-hover">Sector#11, uttara Dhaka</a>
                     <a class="link link-hover">Gariv-E-Newaz Road</a>
                     <a class="link link-hover">Email: wiseshop@gmail.com</a>
-                    <a class="link link-hover">Phone: +8801977778888</a>
+                    <a class="link link-hover">Phone: +8801977778811</a>
                 </div>
                 <div>
                     <span class="footer-title">Legal</span>

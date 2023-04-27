@@ -2,6 +2,7 @@ import React from 'react';
 import UseBooksOnSale from '../../UseBooksOnSale/UseBooksOnSale';
 import { Swiper, SwiperSlide } from "swiper/react";
 import './BooksOnSale.css'
+import { TbCurrencyTaka } from "react-icons/tb";
 
 // Import Swiper styles
 
@@ -92,8 +93,11 @@ const BooksOnsale = () => {
 
                                 <div className='flex justify-center'>
 
-                                    <h3 className='text-center text-xl text-primary font-bold mr-5'>${bookOnSale.price}</h3>
-                                    <h3 className='text-center text-xl previousPrice font-bold'><del>{bookOnSale.previousPrice}</del></h3>
+                                    <h3 className=' flex justify-center items-center  text-xl text-primary font-bold mr-5'>  <TbCurrencyTaka />{bookOnSale.price}</h3>
+
+
+                                    <h3 className='  text-xl previousPrice font-bold'><del className='flex justify-center items-center'> <TbCurrencyTaka />{bookOnSale.previousPrice}</del>
+                                    </h3>
 
                                 </div>
 

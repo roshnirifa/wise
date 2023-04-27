@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './RecomendedBooks.css'
 import { Swiper, SwiperSlide } from "swiper/react";
+import { TbCurrencyTaka } from "react-icons/tb";
 
 // Import Swiper styles
 
@@ -94,7 +95,7 @@ const RecomendedBooks = () => {
                         disableOnInteraction: false,
                     }}
                     pagination={false}
-                    modules={[EffectCoverflow, Pagination, Autoplay]}
+                    // modules={[EffectCoverflow, Pagination, Autoplay]}
                     className="bookSwiper  ">
 
                     {
@@ -103,7 +104,13 @@ const RecomendedBooks = () => {
                             <img src={recommendedBooks.img} alt="" />
                             <div className='text-center'>
                                 <h3 className='text-center text-2xl text-secondary font-bold'>{recommendedBooks.name}</h3>
-                                <h3 className='text-center text-2xl text-primary font-bold'>${recommendedBooks.price}</h3>
+
+                                <h3 className=' flex text-2xl text-primary font-bold justify-center items-center'>
+                                    <TbCurrencyTaka />{recommendedBooks.price}
+
+
+                                </h3>
+
 
                                 <div className='mt-2'>
                                     <button

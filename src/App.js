@@ -26,9 +26,12 @@ import RequireAdmin from './Pages/Home/Login/RequireAdmin/RequireAdmin';
 import AddBooks from './Pages/Dashboard/AddBooks/AddBooks';
 import ManageBook from './Pages/Dashboard/ManageBook/ManageBook';
 import RecomandDetails from './Pages/Home/RecomendedBooks/RecomandDetails/RecomandDetails';
+import PaymentSuccess from './Pages/Home/CartCalculation/PaymentSuccess';
+import PaymentFailed from './Pages/Home/CartCalculation/PaymentFailed';
+import Contact from './Pages/Home/Contact/Contact';
 
-import CheckoutForm from './Pages/Home/CartCalculation/CheckoutForm/CheckoutForm';
-import Checkout from './Pages/Home/CartCalculation/CheckOut/CheckOut';
+// import CheckoutForm from './Pages/Home/CartCalculation/CheckoutForm/CheckoutForm';
+// import Checkout from './Pages/Home/CartCalculation/CheckOut/CheckOut';
 
 
 function App() {
@@ -39,16 +42,14 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/userProfile' element={<UserProfile></UserProfile>}></Route>
 
-        <Route path='checkout' element={<Checkout></Checkout>}>
+        <Route path='/payment/success' element={<PaymentSuccess></PaymentSuccess>}></Route>
+        <Route path='/payment/fail' element={<PaymentFailed></PaymentFailed>}></Route>
 
-        </Route>
-        <Route path='CheckoutForm' element={<CheckoutForm></CheckoutForm>}>
-
-        </Route>
 
 
         <Route path='/cartcalculation' element={
@@ -84,6 +85,7 @@ function App() {
           <Route path='userProfile' element={<UserProfile></UserProfile>}></Route>
 
           <Route path='cartcalculation' element={<CartCalculation></CartCalculation>}></Route>
+          <Route path='paymentDetails' element={<PaymentSuccess></PaymentSuccess>}></Route>
 
           <Route path='allUsers' element={<RequireAdmin>
             <AllUsers></AllUsers>
